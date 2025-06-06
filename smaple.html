@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Numbers 1 to 10</title>
+    </head>
+    <body>
+                <div class="container" id="container">
+                    <input id="search" class="search" type="text" placeholder="Enter something..." />
+                    <h1>One</h1>
+                    <h1>Two</h1>
+                    <h1>Three</h1>
+                    <h1>Four</h1>
+                    <h1>Five</h1>
+                    <h1>Six</h1>
+                    <h1>Seven</h1>
+                    <h1>Eight</h1>
+                    <h1>Nine</h1>
+    </body>
+
+    <script>
+        var search = document.getElementById("search")
+        var container = document.getElementById("container")
+        var h1List = document.querySelectorAll("h1")
+
+        search.addEventListener("keyup", function(){
+            var eneteredValue =event.target.value.toUpperCase()
+
+            for(i=0; i < h1List.length; i=i+1){
+                if(h1List[i].textContent.toUpperCase().indexOf(eneteredValue)<0){
+                    h1List[i].style.display="none"
+                }
+                else{
+                    h1List[i].style.display="block"
+                }
+            }
+        })
+    </script>
